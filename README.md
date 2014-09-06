@@ -4,4 +4,22 @@
 
 # key-list
 
-Returns a list of the interpolation keys in a string.
+Returns a list of the interpolation keys in a string. That is, if you have a string that you're using interpolation on, like
+
+```
+Hello, {{ member.name }}
+```
+
+and you call key-list with this string, you'll get back
+
+```
+[ 'member.name' ]
+```
+
+## Installation
+
+`npm install key-list --save`
+
+## Usage
+
+
