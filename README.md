@@ -40,6 +40,7 @@ keyList.getKeys('{ member.name }', 'thin-mustache');
 keyList.getKeys('{% member.name %}', 'glasses');
 keyList.getKeys('<%= member.name %>', 'ejs');
 keyList.getKeys('#{ member.name }', 'coffee');
+keyList.getKeys('${ member.name }', 'es6');
 
 // I know, you probably wouldn't use these in javascript, but hey . . . they're there if you do
 keyList.getKeys('@member.name', 'razor'); 
