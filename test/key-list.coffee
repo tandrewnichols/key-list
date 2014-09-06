@@ -13,6 +13,21 @@ describe 'key-list', ->
     When -> @list = @subject.getKeys @str, 'mustache'
     Then -> expect(@list).to.deep.equal ['interpolated', 'spaces']
 
+  context 'thin-mustache', ->
+    Given -> @str = 'some test to be { interpolated } where the interpolation may or may not have {spaces}'
+    When -> @list = @subject.getKeys @str, 'thin-mustache'
+    Then -> expect(@list).to.deep.equal ['interpolated', 'spaces']
+
+  context 'glasses', ->
+    Given -> @str = 'some test to be {% interpolated %} where the interpolation may or may not have {%spaces%}'
+    When -> @list = @subject.getKeys @str, 'glasses'
+    Then -> expect(@list).to.deep.equal ['interpolated', 'spaces']
+
+  context 'perl', ->
+    Given -> @str = 'some test to be [% interpolated %] where the interpolation may or may not have [%spaces%]'
+    When -> @list = @subject.getKeys @str, 'perl'
+    Then -> expect(@list).to.deep.equal ['interpolated', 'spaces']
+
   context 'ejs', ->
     Given -> @str = 'some test to be <%= interpolated %> where the interpolation may or may not have <%=spaces%>'
     When -> @list = @subject.getKeys @str, 'ejs'
@@ -50,3 +65,8 @@ describe 'key-list', ->
     Given -> @subject.open = '@\\|\\s*'
     When -> @list = @subject.getKeys @str
     Then -> expect(@list).to.deep.equal ['interpolated', 'spaces']
+
+  context 'with nested keys', ->
+    Given -> @str = 'some test to be {{ interpo.lated }} where the interpolation may or may not have {{spaces}}'
+    When -> @list = @subject.getKeys @str
+    Then -> expect(@list).to.deep.equal ['interpo.lated', 'spaces']
