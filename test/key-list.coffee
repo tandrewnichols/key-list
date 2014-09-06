@@ -38,6 +38,11 @@ describe 'key-list', ->
     When -> @list = @subject.getKeys @str, 'coffee'
     Then -> expect(@list).to.deep.equal ['interpolated', 'spaces']
 
+  context 'es6', ->
+    Given -> @str = 'some test to be ${ interpolated } where the interpolation may or may not have ${spaces}'
+    When -> @list = @subject.getKeys @str, 'es6'
+    Then -> expect(@list).to.deep.equal ['interpolated', 'spaces']
+
   context 'razor', ->
     Given -> @str = 'some test to be @interpolated where the interpolation does not have @spaces'
     When -> @list = @subject.getKeys @str, 'razor'
