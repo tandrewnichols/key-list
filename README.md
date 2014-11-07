@@ -35,7 +35,7 @@ But even if you have a different pattern, I've made it easy to use this library.
 Here are the currently recognized pattern names:
 
 ```javascript
-keyList.getKeys(<code ng-non-bindable>{{ member.name }}</code>, 'mustache');
+keyList.getKeys('{{ member.name }}', 'mustache');
 keyList.getKeys('{ member.name }', 'thin-mustache');
 keyList.getKeys('{% member.name %}', 'glasses');
 keyList.getKeys('<%= member.name %>', 'ejs');
