@@ -41,7 +41,7 @@
     "mocha-lcov-reporter": "0.0.1",
     "proxyquire": "^1.0.1",
     "sinon": "^1.10.3",
-    "task-master": "^2.0.1"
+    "task-master": "^2.2.0"
   },
   "config": {
     "blanket": {
