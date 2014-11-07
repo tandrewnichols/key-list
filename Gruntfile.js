@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     jit: {
       travis: 'grunt-travis-matrix',
       matrix: 'grunt-travis-matrix',
-      mochachov: 'grunt-mocha-cov'
+      mochacov: 'grunt-mocha-cov'
     }
   });
   grunt.registerTask('mocha', ['mochaTest:test']);
