@@ -22,7 +22,7 @@ and you call key-list with this string, you'll get back
 
 ## Usage
 
-The default interpolation is the mustache pattern (`{{ someKey }}`), so if you're using mustache, getting a list of keys is as easy as
+The default interpolation is the mustache pattern (<code ng-non-bindable>{{ someKey }}</code>), so if you're using mustache, getting a list of keys is as easy as
 
 ```javascript
 var keyList = require('key-list');
@@ -35,7 +35,7 @@ But even if you have a different pattern, I've made it easy to use this library.
 Here are the currently recognized pattern names:
 
 ```javascript
-keyList.getKeys('{{ member.name }}', 'mustache');
+keyList.getKeys(<code ng-non-bindable>{{ member.name }}</code>, 'mustache');
 keyList.getKeys('{ member.name }', 'thin-mustache');
 keyList.getKeys('{% member.name %}', 'glasses');
 keyList.getKeys('<%= member.name %>', 'ejs');
