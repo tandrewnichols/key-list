@@ -48,6 +48,11 @@ describe 'key-list', ->
     When -> @list = @subject.getKeys @str, 'razor'
     Then -> expect(@list).to.deep.equal ['interpolated', 'spaces']
 
+  context 'express', ->
+    Given -> @str = 'some test to be :interpolated where the interpolation does not have :spaces'
+    When -> @list = @subject.getKeys @str, 'express'
+    Then -> expect(@list).to.deep.equal ['interpolated', 'spaces']
+
   context 'custom string pattern', ->
     Given -> @str = 'some test to be @| interpolated | where the interpolation does not have @|spaces|'
     When -> @list = @subject.getKeys @str, '@\\|\\s*([a-zA-Z0-9_\\$]+)\\s*\\|'
