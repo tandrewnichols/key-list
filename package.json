@@ -19,13 +19,12 @@
   "author": {
     "name": "Andrew Nichols",
     "email": "tandrewnichols@gmail.com",
-    "url": "www.tandrewnichols.me"
+    "url": "http://www.tandrewnichols.me"
   },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tandrewnichols/key-list/issues"
   },
-  "homepage": "http://www.tandrewnichols.me/modules/key-list",
   "devDependencies": {
     "coffee-script": "^1.8.0",
     "grunt": "^0.4.5",
